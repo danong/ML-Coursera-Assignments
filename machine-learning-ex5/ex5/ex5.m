@@ -218,3 +218,9 @@ end
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
+
+%% =========== Part 9: Validation for Selecting Lambda =============
+%  You will now implement validationCurve to test various values of 
+%  lambda on a validation set. You will then use this to select the
+%  "best" lambda value.
+%
