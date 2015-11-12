@@ -16,3 +16,7 @@ Multi-class Classification and Neural Networks (Architecture)
 Ex 4
 ---
 Neural Network Learning (Backpropogation)
+
+Ex 5
+---
+Regularized Linear Regression and Bias v.s. Variance
