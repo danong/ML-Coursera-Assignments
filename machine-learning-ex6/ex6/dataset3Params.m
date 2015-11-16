@@ -23,8 +23,21 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
-
-
+max_error = 99999; 
+for c_temp = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30],
+    for sigma_temp = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30],
+        % check syntax here
+        model = svmTrain(X, y, c_temp, @(x1, x2) gaussianKernel(x1, x2, sigma_temp));
+        predictions = svmPredict(model, Xval);
+        error = mean(double(predictions ~= yval));
+        
+        if error < max_error,
+            max_error = error;
+            C = c_temp;
+            sigma = sigma_temp;
+        end;
+    end;
+end;   
 
 
 

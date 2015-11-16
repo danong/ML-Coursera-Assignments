@@ -100,8 +100,11 @@ while ~isempty(email_contents)
     [Lia, Locb] = ismember(str, vocabList);
 
     if Lia,
-        word_indices = [word_indices; Locb];
+        word_indices = [word_indices; 18];
     end;
+
+
+
 
     % =============================================================
 
