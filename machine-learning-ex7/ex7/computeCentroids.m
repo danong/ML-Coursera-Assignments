@@ -26,9 +26,26 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
+% m = number of examples: 300
+% n = number of dimensions: 2
+% K = number of centroids: 3
+% idx = index of closest centroid for each point: [300 x 1]
 
+count = zeros(K, 1);
+% iterate through training examples
+for i = 1:m
+    % k gets index of closest centroid
+    k = idx(i);
+    % add ith example to kth centroid
+    centroids(k,:) = centroids(k,:) + X(i,:);
+    count(k) = count(k) +1;
+end;
 
-
+for j = 1:K
+    if (count(j) ~= 0)
+        centroids(j,:) = centroids(j, :) ./ count(j);
+    end;
+end;
 
 
 
